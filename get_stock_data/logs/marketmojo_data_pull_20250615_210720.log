@@ -1,0 +1,31 @@
+2025-06-15 21:07:52,819 INFO:Processing data...
+2025-06-15 21:07:52,946 INFO:Total processed records: 2102 found, 4 not found.
+2025-06-15 21:07:53,033 INFO:Filtering stocks with Strong Buy criteria...
+2025-06-15 21:07:53,040 INFO:Checking filtered NSEIDs in stock_id_dir
+2025-06-15 21:07:55,538 INFO:Updated stock_id_dir with 7 entries.
+2025-06-15 21:07:55,539 INFO:Checking Current scores of filtered stocks in stock_id_dir
+2025-06-15 21:07:55,575 INFO:Processing NSEID: HINDPETRO
+2025-06-15 21:07:55,577 INFO:ScoreText for HINDPETRO is Strong Buy.
+2025-06-15 21:07:55,577 INFO:NSEID HINDPETRO already exists in stock_id_dir with scoreText Strong Buy. No action taken
+2025-06-15 21:07:55,578 INFO:Processing NSEID: DCBBANK
+2025-06-15 21:07:55,579 INFO:ScoreText for DCBBANK is Strong Buy.
+2025-06-15 21:07:55,579 INFO:NSEID DCBBANK already exists in stock_id_dir with scoreText Strong Buy. No action taken
+2025-06-15 21:07:55,579 INFO:Processing NSEID: SHARDACROP
+2025-06-15 21:07:55,580 INFO:ScoreText for SHARDACROP is Strong Buy.
+2025-06-15 21:07:55,580 INFO:NSEID SHARDACROP already exists in stock_id_dir with scoreText Strong Buy. No action taken
+2025-06-15 21:07:55,580 INFO:Processing NSEID: CANBK
+2025-06-15 21:07:55,581 INFO:ScoreText for CANBK is Strong Buy.
+2025-06-15 21:07:55,581 INFO:NSEID CANBK already exists in stock_id_dir with scoreText Strong Buy. No action taken
+2025-06-15 21:07:55,581 INFO:Processing NSEID: UNIONBANK
+2025-06-15 21:07:55,581 INFO:ScoreText for UNIONBANK is Strong Buy.
+2025-06-15 21:07:55,581 INFO:NSEID UNIONBANK already exists in stock_id_dir with scoreText Strong Buy. No action taken
+2025-06-15 21:07:55,581 INFO:Processing NSEID: NATIONALUM
+2025-06-15 21:07:55,581 INFO:ScoreText for NATIONALUM is Strong Buy.
+2025-06-15 21:07:55,581 INFO:NSEID NATIONALUM already exists in stock_id_dir with scoreText Strong Buy. No action taken
+2025-06-15 21:07:55,581 INFO:Processing NSEID: BANKINDIA
+2025-06-15 21:07:55,581 INFO:ScoreText for BANKINDIA is Strong Buy.
+2025-06-15 21:07:55,581 INFO:NSEID BANKINDIA already exists in stock_id_dir with scoreText Strong Buy. No action taken
+2025-06-15 21:07:55,581 INFO:Filtering complete. Strong Buy stocks processed.
+2025-06-15 21:07:55,581 INFO:Outputs saved successfully.
+2025-06-15 21:07:55,581 INFO:Data processing completed.
+2025-06-15 21:07:55,581 INFO:Start time: 2025-06-15 21:07:20.674475, End time: 2025-06-15 21:07:52.946858

@@ -1,0 +1,95 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jun 13 17:02:15 2021
+
+@author: SAJI
+"""
+from datetime import datetime
+import pandas as pd
+import urllib.request as request
+import json
+import requests
+
+start_time = datetime.now()
+
+
+
+df = pd.read_csv('D:\StockMarket\Program\Marketmojo_Pulling_data_from_stockid\Input\stock_id_found.csv')
+
+data_f=[]
+data_nf=[]
+
+stock_id = df.iloc[:,0]
+
+#stock_id =['984165','80980980090898']
+
+for i in stock_id:
+    t=len(data_f)
+    print('stockid_data'+str(t)) if t%10==0 else t
+    url = 'https://frapi.marketsmojo.com/stocks_stocksid/header_info?sid='+str(i)
+    print(url)
+    with requests.get(url) as response:
+        data = response.json()
+    #with request.urlopen('https://frapi.marketsmojo.com/stocks_stocksid/header_info?sid='+str(i)) as response:
+     #   source = response.read()
+      #  data = json.loads(source)
+        data_f.append(data) if data['code'] == '200' else data_nf.append(i)
+
+df1 = pd.DataFrame(data_nf)
+df1.to_csv('D:\StockMarket\Program\Marketmojo_Pulling_data_from_stockid\Output\stock_id_404_error.csv', index=False, header=True)
+        
+
+columns=[]
+m_lst=[]
+m_lst_nf=[]
+for j in data_f:
+    t=len(m_lst)
+    print('stock_Valuations'+str(t)) if t%10==0 else t
+    if 'details' in j['data']:
+        d = j['data']['details']
+        if 'dot_summary' in j['data']:
+            e = j['data']['dot_summary']
+            lst=[]
+            for data in d:
+                col=data['field_name']
+                if col not in columns:
+                    columns.append(col)
+                lst.append(data['value'])
+            for data in e:
+                #print(e[data])
+                #print(data,e[data])
+                if data.endswith('_txt') | (data=='score') | (data=='tech_score') | (data.endswith('Text')) | (data.endswith('_rank')):
+                    lst.append(e[data])
+                    if data not in columns:
+                        columns.append(data)
+            m_lst.append(lst)
+        else:
+            m_lst_nf.append(j)
+    else:
+        m_lst_nf.append(j)
+
+my_df = pd.DataFrame(m_lst,columns=columns)
+my_df_nf = pd.DataFrame(m_lst_nf)
+    
+#my_df = pd.DataFrame(m_lst,columns=["BSE_ID", "Company_Name", "ISIN", "Industry", "Market_cap","Quality","Valuation","Financial","Technical","Quality_value"])
+
+my_df.to_csv('D:\StockMarket\Program\Marketmojo_Pulling_data_from_stockid\Output\stock_data_found.csv', index=False, header=True)
+my_df_nf.to_csv('D:\StockMarket\Program\Marketmojo_Pulling_data_from_stockid\Output\stock_data_not_found.csv', index=False, header=True)
+
+End_time = datetime.now()
+
+text_file = open("D:\StockMarket\Program\Marketmojo_Pulling_data_from_stockid\Output\Duration.txt", "w")
+
+text_file.write("start_time "+ str(start_time)+'\n'
+                +"End_time "+ str(End_time)+'\n'
+                + "How Many Stock ID :" + str(len(stock_id))+'\n'
+                +"404_error_count :"+str(len(data_nf))+'\n'
+                +"stock_data_found_count :" +str(len(m_lst))+'\n'
+                +"stock_data_not_found_count :" +str(len(m_lst_nf)))
+text_file.close()
+
+
+End_time = datetime.now()
+print(start_time)
+print(End_time) 
+
