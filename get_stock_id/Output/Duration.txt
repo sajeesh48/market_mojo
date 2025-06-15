@@ -1,0 +1,5 @@
+start_time 2025-06-08 15:24:39.351402
+End_time 2025-06-08 15:26:29.784925
+ISIN_count :2104
+Stock_found_count :2102
+Stock_not_found_count : 2

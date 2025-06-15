@@ -1,0 +1,5 @@
+start_time 2025-06-08 15:11:59.872020
+End_time 2025-06-08 15:14:30.948464
+ISIN_count :5556
+Stock_found_count_bse :5211
+Stock_not_found_count_bse : 345
