@@ -12,13 +12,23 @@ import yfinance as yf
 import logging
 
 api_url = 'https://frapi.marketsmojo.com/stocks_stocksid/header_info?sid='
-output_dir = "D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\Output\\"
-archives = "D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\archives\\"
-stock_id_dir= 'D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\Input\\stock_id_found.csv'
+#output_dir = "D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\Output\\"
+#archives = "D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\archives\\"
+#stock_id_dir= 'D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\Input\\stock_id_found.csv'
+#raw_data = output_dir + "stock_data_found.csv"
+#stocks_inprogress = 'D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\Output\\stocks_inprogress.csv'
+#pl_booked_stocks = 'D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\Output\\overall_profit_loss.csv'
+#log_path = "D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\logs\\"*
+
+
+
+output_dir = "/home/ec2-user/market_mojo/tmp/get_stock_data/Output/"
+archives = "/home/ec2-user/market_mojo/tmp/get_stock_data/archives/"
+stock_id_dir= '/home/ec2-user/market_mojo/tmp/get_stock_data/Input/stock_id_found.csv'
 raw_data = output_dir + "stock_data_found.csv"
-stocks_inprogress = 'D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\Output\\stocks_inprogress.csv'
-pl_booked_stocks = 'D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\Output\\overall_profit_loss.csv'
-log_path = "D:\\StockMarket\\Program\\Marketmojo_Pulling_data_from_stockid\\logs\\"
+stocks_inprogress = '/home/ec2-user/market_mojo/tmp/get_stock_data/Output/stocks_inprogress.csv'
+pl_booked_stocks = '/home/ec2-user/market_mojo/tmp/get_stock_data/Output/overall_profit_loss.csv'
+log_path = '/home/ec2-user/market_mojo/tmp/get_stock_data/logs/'
 
 # Logger setup
 def setup_logger(log_path):
